@@ -19,7 +19,18 @@ output = {
             "Key2.c.e" : "1"
         }
 
-def flatten_dictionary(dictionary, input_key = '', newdict = {}):
-  for key, val in dictionary.items():
-    if type(val) == dict:
-      flatten_dictionary(val)
+def flatten_dictionary(dictionary, lkey = ""):
+    ret = {}
+    for rkey, val in dictionary.items():
+        key = lkey+rkey
+        if type(val) == dict:
+          if rkey == "" or rkey == None:
+            ret.update(flatten_dictionary(val, key))
+          else:
+            ret.update(flatten_dictionary(val, key+'.'))
+        else:
+            ret[key] = val
+    return ret
+
+
+print(flatten_dictionary(dict1))
