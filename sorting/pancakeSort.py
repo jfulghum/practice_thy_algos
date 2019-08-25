@@ -26,3 +26,26 @@ arr = [1,2,3,4,56,7]
 
 
 print(pancake_sort(arr))
+
+
+#my way
+def pancakeSort(array):
+  for i in range(len(array)-1,-1,-1):
+    biggest = findBiggestIdx(array[:i+1])
+    flip(array, biggest)
+    flip(array, i)
+  return array
+
+
+def findBiggestIdx(array):
+  biggest = 0
+  for i in range(len(array)):
+    if array[i] > array[biggest]:
+      biggest = i
+  return biggest
+
+
+def flip(array, k):
+  array[:k+1] = array[:k+1][::-1]
+
+print(pancakeSort([1, 2, 3, 3, 4,4,3,2,1,2,3,4,55,66,43]))
