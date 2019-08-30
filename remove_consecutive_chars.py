@@ -7,9 +7,19 @@ def remove_extra_consecutive(input_str, max_consecutive_chars):
       consecutive_count += 1
     else:
       consecutive_count = 0
-      prev_char = current_char
+    prev_char = current_char
     if consecutive_count < max_consecutive_chars:
       output += current_char
   return output
 
-print(remove_extra_consecutive("johanna", 1))
+print(remove_extra_consecutive("johannnna", 3))
+
+
+
+# if prevchar == currentchar
+# count++
+# prevchar = currentchar
+# else
+# count = 0
+# if count < k:
+# output += char

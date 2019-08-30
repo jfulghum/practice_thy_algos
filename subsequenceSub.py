@@ -5,8 +5,8 @@ def subsequenceSub(array, target):
   start = 0
   i = 1
   while i <= len(array):
-    while current_sum > target and start < i - 1:
-      current_sum = current_sum - array[start]
+    while current_sum > target and start < i -1:
+      current_sum -= array[start]
       start += 1
     if current_sum == target:
       return True
@@ -17,3 +17,12 @@ def subsequenceSub(array, target):
 
 #patrick let's go over this
 print(subsequenceSub([1,2,-3,1] , 0))
+
+
+# def subsequenceSub(array, target):
+
+# [1,2,-3,4], 0
+#^
+ #check
+ #
+ # if currentsum == target

@@ -15,3 +15,5 @@ def swap(array, i, j):
   array[i], array[j] = array[j], array[i]
 
 print(selectionSort(array))
+
+#It minimizies number of swaps, choose when swapping is expensive.
