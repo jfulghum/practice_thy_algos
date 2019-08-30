@@ -10,5 +10,15 @@ def lengthOfLongestSubstringWithoutRepeatingChars(string):
   return max_length
 
 print(lengthOfLongestSubstringWithoutRepeatingChars("abcabcbb") == 3)
+#pat let's discuss
 #sliding window
+
+
+
+
+
+
+
+
+
 #https://www.youtube.com/watch?v=sZosU8JjVaA

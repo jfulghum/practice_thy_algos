@@ -5,7 +5,8 @@ def word_pattern(string, pattern):
   words = string.split(" ")
   if len(words) != len(pattern):
     return False
-  return list(map(pattern.find, pattern)) == list(map(words.index, words))
+  return [pattern.find(x) for x in pattern] == [words.index(x) for x in words]
+  # return list(map(pattern.find, pattern)) == list(map(words.index, words))
 
 print(word_pattern(string, pattern))
 
