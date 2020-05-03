@@ -5,7 +5,7 @@ def subsequenceSub(array, target):
   start = 0
   i = 1
   while i <= len(array):
-    while current_sum > target and start < i -1:
+    while current_sum > target and start < i - 1:
       current_sum -= array[start]
       start += 1
     if current_sum == target:
