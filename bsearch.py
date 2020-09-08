@@ -1,14 +1,15 @@
-def bsearch(array, target, l, r):
-  if r >= l:
-    mid = (l + r - 1) //2
-    if array[mid] == target:
+def bsearch(array, target, low, high):
+  if high >= low:
+    mid = (high + low) // 2 
+    if target == array[mid]:
       return mid
-    elif array[mid] > target:
-      return bsearch(array, target, 0, mid - 1)
-    elif array[mid] < target:
-      return bsearch(array, target, mid + 1, l + r - 1)
+    elif target < array[mid]:
+      return bsearch(array, target, low, mid - 1)
+    else:
+      return bsearch(array, target, mid + 1, high)
   else:
     return -1
+
 
 array = [1,2,3,4,5,6,7,8,9]
 print(bsearch(array,8, 0, len(array) - 1))
