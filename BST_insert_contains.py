@@ -31,4 +31,20 @@ class BST():
 				currentNode = currentNode.right
 		return False
 	
+	def findClosestValueInBst(tree, target):
+                currentNode = tree
+		closest = float("inf")
+		while currentNode is not None:
+			if abs(target - currentNode.value) < abs(target - closest):
+				closest = currentNode.value
+			if target < currentNode.value:
+				currentNode = currentNode.left
+			elif target > currentNode.value:
+				currentNode = currentNode.right
+			elif target == currentNode.value:
+				return target
+			else:
+				return closest
+		return closest
+	
 		
