@@ -1,0 +1,15 @@
+def meeting_planner(slotsA, slotsB, dur):
+  a1 = 0 
+  b1 = 0 
+  while a1 < len(slotsA) and b1 < len(slotsB):
+    start = max(slotsA[a1][0], slotsB[b1][0])
+    end = min(slotsA[a1][1], slotsB[b1][1])
+    
+    if (start + dur <= end):
+      return [start, start + dur]
+
+    if slotsA[a1][1] < slotsB[b1][1]:
+      a1 += 1
+    else:
+      b1 += 1
+  return []
