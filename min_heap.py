@@ -1,3 +1,9 @@
+# what is a heap?
+# yes, it’s a special binary tree data structure, that has two additional properties:
+# * completeness, so all of it’s levels need to be filled up (and if there are not enough nodes, it needs to be filled up from the left to right)
+# * heap property, for min heap, every node in the heap is smaller or equal to it’s children’s nodes values.
+# Note: a heap is in no way sorted. 
+
 class MinHeap:
     def __init__(self, array):
         # Do not edit the line below.
