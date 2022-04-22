@@ -29,7 +29,7 @@ def canMatchFellows(ratingbyFellow):
             result.remove(value)
         else:
             result.add(value)
-    return not len(result) 
+    return not result
 
 
 print(canMatchFellows({"oliver": 3, "pixel": 3, "pinky": 5, "tobey": 5})) # true
