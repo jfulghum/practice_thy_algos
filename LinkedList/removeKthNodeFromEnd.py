@@ -6,7 +6,7 @@ class LinkedList:
 
 def removeKthNodeFromEnd(head, k):
 	first = head
-    second = head
+    	second = head
 	counter = 1
 	while counter <= k:
 		second = second.next
