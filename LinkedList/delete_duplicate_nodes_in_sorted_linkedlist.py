@@ -13,3 +13,5 @@ class Solution:
             curr.next = nextNode
             curr = curr.next
         return head
+
+#     https://leetcode.com/problems/remove-duplicates-from-sorted-list/submissions/
