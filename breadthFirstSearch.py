@@ -19,3 +19,38 @@ class Node:
 				queue.append(child)
 			array.append(current.name)
 		return array
+
+	
+# Target runtime and space complexity:
+#  O(n)
+# Examples:
+
+
+def findHat(dogs, bestFriend):
+    dogsToAsk = [bestFriend]
+    dogsAlreadyAsked = set()
+    while(len(dogsToAsk) > 0):
+        nextDogToAsk = dogsToAsk.pop();
+        if nextDogToAsk in dogsAlreadyAsked:
+            continue
+        if (dogs[nextDogToAsk][0] == 'HAT'):
+            return nextDogToAsk
+        dogsAlreadyAsked.add(nextDogToAsk)
+
+        newDogsToAsk = dogs[nextDogToAsk]
+        dogsToAsk.extend(newDogsToAsk)
+    return -1
+
+
+
+dogs = {
+  'Carter': ['Fido', 'Ivy'],
+  'Ivy': ["HAT"], # Ivy has seen the hat
+  'Loki': ['Snoopy'],
+  'Pepper': ['Carter'],
+  'Snoopy': ['Pepper'],
+  'Fido': []
+}
+
+print(findHat(dogs, 'Loki')) # returns 'Ivy'
+
