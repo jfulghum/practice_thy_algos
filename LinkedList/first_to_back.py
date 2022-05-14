@@ -1,5 +1,4 @@
 def solution(head):
-    tail = head
     if head is None or head.next is None:
         return head
         
