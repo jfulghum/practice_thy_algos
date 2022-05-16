@@ -20,6 +20,10 @@ def kreps(arr, k):
             return elem
     return None
 
+# Time is O(n) and Space is o(n) 
+    # You call “linear” b/c it scales linearly with the scale of the input.
+
+
 def kreps2(arr, k):
     counts = {}
     for elem in arr:
@@ -28,10 +32,37 @@ def kreps2(arr, k):
         if counts[elem] == k:
             return elem
     return None
-    
- # Space complexity doesn’t change. 
 
-# Compared to before, the worst case is the same.
+# Time complexity ^^ doesn't change b/c:
+#      Compared to before, the worst case is the same.
+# Space complexity doesn’t change. it is O(n).
+
+
+def kreps3(arr, k):
+    for i in range(len(arr)):
+        count = 0
+        for j in range(i, len(arr)):
+            if arr[j] == arr[i]:
+                count += 1
+            if count == k:
+                return arr[i]
+    return None
+
+# Time complexity is N^2. 
+    # You are doing N operations N times. 
+# Space complexity here is better b/c Space is constant.
+    # Space is not constant NOT b/c we aren't creating anything that requires space, we are, count requires space, but nothing that requires N space. 
+
+
+
+# [1,1,2,2,2,1], k =3
+# 2
+# 1
+
+print(kreps3([3,4,5,5,5,6,6,6], 3), 'expect 5')
+print(kreps3([1,2,3], 1), 'expect 1')
+print(kreps3([], 1), 'expect None')
+    
 
 # [1,1,2,2,2,1], k =3
 # 2
