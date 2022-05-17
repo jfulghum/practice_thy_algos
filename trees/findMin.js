@@ -15,7 +15,7 @@ Count the number of times a target value is in the BT
 [4, 2, 1,]
             => 1
       4
-    -1 -1 
+    1. 
     n   n
 
 **/
@@ -40,15 +40,39 @@ function findMin(tree){
   return Math.min(leftMin, rightMin)
 }
 
-
-console.log(findMin(new TreeNode(-10, new TreeNode(4, new TreeNode(3)))),3)
-console.log(findMin(new TreeNode(4, new TreeNode(-4, new TreeNode(-3)))), 4)
-
-const sampleTree = new TreeNode(4, new TreeNode(3), new TreeNode(-100, new TreeNode(-1), new TreeNode(5)))
-console.log(findMin(sampleTree))
+// post order = left, right, current
 
 
-console.log(findMin(new TreeNode(3, new TreeNode(-1, new TreeNode(-7)), new TreeNode(5))))
+function mostFreq(node){
+  let freq = new Map()
+  let mostFreqKey = null
+  let maxOccurance = -Infinity
+  visit(node)
+  
+  function visit(node){
+    if(!node) return 
+    visit(node.left)
+    visit(node.right)
+    const count = (freq.get(node.val) || 0) + 1
 
-console.log(findMin(null))
-console.log(findMin(new TreeNode(-100)))
+    if(count > maxOccurance) {
+      mostFreqKey = node.val
+      maxOccurance = count
+    }
+    freq.set(node.value, count)
+  }
+
+  return mostFreqKey
+}
+
+console.log(mostFreq(new TreeNode(-10, new TreeNode(3, new TreeNode(3, new TreeNode(-10))))),3)
+console.log(mostFreq(new TreeNode(4, new TreeNode(4, new TreeNode(4)))), 4)
+
+const sampleTree = new TreeNode(4, new TreeNode(4), new TreeNode(4, new TreeNode(-1), new TreeNode(-5)))
+console.log(mostFreq(sampleTree))
+
+
+console.log(mostFreq(new TreeNode(3, new TreeNode(-7, new TreeNode(-7)), new TreeNode(5))))
+
+console.log(mostFreq(null))
+console.log(mostFreq(new TreeNode(-100)))
