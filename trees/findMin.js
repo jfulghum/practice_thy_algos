@@ -76,3 +76,29 @@ console.log(mostFreq(new TreeNode(3, new TreeNode(-7, new TreeNode(-7)), new Tre
 
 console.log(mostFreq(null))
 console.log(mostFreq(new TreeNode(-100)))
+
+
+function targetCount(node, target){
+  let count = 0;
+  if(!node) return count;
+  if (node.val === target) {
+    count += 1;
+  }
+  count += targetCount(node.left, target);
+  count += targetCount(node.right, target);
+  return count;
+
+}
+
+
+console.log(targetCount(new TreeNode(-10, new TreeNode(3, new TreeNode(3, new TreeNode(-10)))), ))
+console.log(targetCount(new TreeNode(4, new TreeNode(4, new TreeNode(4))), 4))
+
+const sampleTree = new TreeNode(4, new TreeNode(4), new TreeNode(4, new TreeNode(-1), new TreeNode(-5)))
+console.log(targetCount(sampleTree, 4))
+
+
+console.log(targetCount(new TreeNode(3, new TreeNode(-7, new TreeNode(-7)), new TreeNode(5)), -7))
+
+console.log(targetCount(null, 4))
+console.log(targetCount(new TreeNode(-100), 5))
