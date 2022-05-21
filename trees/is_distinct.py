@@ -12,7 +12,7 @@ def is_distinct(node: TreeNode) -> int:
   stack = [node]
   while stack:
     curr = stack.pop()
-    if curr.value == curr.left or curr.value == curr.right:
+    if (curr.left and curr.value == curr.left.value) or (curr.right and curr.value == curr.right.value):
       return False
     if curr.right:
       stack.append(curr.right)
@@ -20,8 +20,10 @@ def is_distinct(node: TreeNode) -> int:
       stack.append(curr.left)
     
   return True
-
+  
 print(is_distinct(None), False)
-print(is_distinct(TreeNode(2, TreeNode(2), TreeNode(3))), True)
-print(is_distinct(TreeNode(2, TreeNode(29, TreeNode(29)), TreeNode(4, TreeNode(2, TreeNode(9))))), True)
-print(is_distinct(TreeNode(8, TreeNode(8))), True)
+print(is_distinct(TreeNode(2, TreeNode(2), TreeNode(3))), False)
+print(is_distinct(TreeNode(2, TreeNode(29, TreeNode(29)), TreeNode(4, TreeNode(2, TreeNode(9))))), False)
+print(is_distinct(TreeNode(8, TreeNode(8))), False)
+print(is_distinct(TreeNode(7, TreeNode(8))), True)
+print(is_distinct(TreeNode(7, TreeNode(8), TreeNode(9))), True)
