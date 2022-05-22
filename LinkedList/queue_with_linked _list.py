@@ -1,5 +1,3 @@
-# Queue Class with Linked List
-
 # Your class will need a head and tail pointer, as well as a field to track the current size.
 # Enqueue adds a new value at one side.
 # Dequeue removes and returns the value at the opposite side.
@@ -8,19 +6,18 @@
 
 
 class ListNode:
-    def __init__(self, value = 0, next = None): 
-        self.value = value
-        self.next = next
-      
+  def __init__(self, value = 0, next = None): 
+    self.value = value
+    self.next = next
+
 class LLQueue:
   def __init__(self):
-        self.front = self.rear = None
-
-  def isEmpty(self):
-        return self.front == None
+      self.front = self.rear = None
+      self.length = 0
     
   def enqueue(self, item):
     temp = ListNode(item)
+    self.length += 1
     if self.rear == None:
       self.front = self.rear = temp
       return
@@ -28,8 +25,11 @@ class LLQueue:
     self.rear = temp
     
   def dequeue(self, item = None):
-    if self.isEmpty():
+    if self.front == None:
       return
+
+    self.length -= 1
+    
     temp = self.front
     self.front = temp.next
 
@@ -39,12 +39,7 @@ class LLQueue:
     return temp.value
     
   def size(self):
-    count = 0 
-    curr = self.front
-    while curr:
-      count += 1
-      curr = curr.next
-    return count
+    return self.length
 
     
 # Expected Runtime
