@@ -40,6 +40,11 @@ def count_tree(root: TreeNode) -> int:
       stack.append(curr.left)
   return count
 
+#recursive
+def count_tree_rec(node):
+    if not node:
+        return 0
+    return 1 + count_tree_rec(node.left) + count_tree_rec(node.right)
 
 # Test Cases
 print(count_tree(None), 0)
