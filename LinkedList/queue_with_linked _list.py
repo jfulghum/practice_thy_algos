@@ -32,9 +32,6 @@ class LLQueue:
     
     temp = self.front
     self.front = temp.next
-
-    if(self.front == None):
-        self.rear = None
       
     return temp.value
     
