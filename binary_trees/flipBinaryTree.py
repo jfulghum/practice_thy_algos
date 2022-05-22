@@ -21,15 +21,20 @@ def arrayifyTree(root):
 
 
 def flipBinaryTree(root: BTNode):
-    stack = [root]
-    while stack:
-        node = stack.pop(-1)
-        if node:
-            node.left, node.right = node.right, node.left
-            stack.append(node.left)
-            stack.append(node.right)
-    return root
+  stack = [root]
+  while stack:
+      node = stack.pop()
+      if node:
+          node.left, node.right = node.right, node.left
+          stack.append(node.left)
+          stack.append(node.right)
+  return root
 
+# recursion
+# def flipBinaryTree(root):
+#   if root:
+#     root.left, root.right = flipBinaryTree(root.right), flipBinaryTree(root.left)
+#     return root
 
 tree1 = BTNode(1,
   BTNode(2,
@@ -42,5 +47,5 @@ tree1 = BTNode(1,
   ),
 );
 
-print(arrayifyTree(tree1))
-print(arrayifyTree(flipBinaryTree(tree1)));
+# print(arrayifyTree(tree1))
+print(arrayifyTree(flipBinaryTree(tree1))); # [1, 3, 2, 7, 6, 5, 4]
