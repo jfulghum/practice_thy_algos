@@ -53,12 +53,51 @@ print(findOnlyChildren(TreeNode(2, TreeNode(2, TreeNode(24), None), TreeNode(3, 
     findOnlyChildren2(root.right)
 
     return single_child_nodes
+  
+  
+ # Hi, why can you seem to access mutable objects in Python from outer scope but not immutable objects?
+# You kind of answered your own question in the question,
+# it's immutable.
+# e.g. findOnlyChildren requires a helper, sumOnlyChildren does not.
 
+def findOnlyChildren(root):
 
-print(findOnlyChildren2(TreeNode(2, TreeNode(2), TreeNode(3, None, TreeNode(4)))) , [4])
-print(findOnlyChildren2(TreeNode(2, TreeNode(2, TreeNode(24), None), TreeNode(3, None, TreeNode(4)))), [24, 4])
+  single_child_nodes = []
 
-# returns incorrectly 
-# 
-# [4] [4]
-# [4, 24, 4] [24, 4]
+  def helper(root):
+    if not root:
+      return
+
+    if not root.left is not None and root.right:
+      single_child_nodes.append(root.right.value)
+
+    elif root.left and not root.right is not None:
+      single_child_nodes.append(root.left.value)
+         
+    helper(root.left)
+    helper(root.right)
+  
+  helper(root)
+
+  return single_child_nodes
+
+def sumOnlyChildren(root, sum=0):
+
+  if not root:
+    return
+
+  if not root.left is not None and root.right:
+    sum += root.right.value
+
+  elif root.left and not root.right is not None:
+    sum += root.left.value
+       
+  sumOnlyChildren(root.left, sum)
+  sumOnlyChildren(root.right, sum)
+  
+  return sum
+
+tree2 = TreeNode(2, TreeNode(2))
+
+print(sumOnlyChildren(tree2)) # 4
+
