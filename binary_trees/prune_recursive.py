@@ -31,6 +31,15 @@ def prune(root, x):
     root.left = prune(root.left, x)
   return root 
 
+def prune2(root, x):
+  if root is None or root.value == x:
+    return None
+    
+  root.right = prune(root.right, x)
+  root.left = prune(root.left, x)
+  
+  return root 
+
 
 tree = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5, TreeNode(9) )), TreeNode(3, TreeNode(6, TreeNode(7))))
 #       1
