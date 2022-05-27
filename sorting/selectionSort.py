@@ -23,17 +23,20 @@ print(selectionSort(array))
 #Eg. for currentIdx in range(0, len(array) -1 ):  or while currentIdx < len(array) - 1:
   # Otherwise if you go to the VERY end, you're going to be switching the last one out of order. 
   
-def selectionSort(array: list[int]) -> list[int]:
-    smallestIdx = 0
-    for currentIdx in range(0, len(array) -1):
-        for i in range(currentIdx, len(array)):
-            if array[i] < array[smallestIdx]:
-                smallestIdx = i 
-        array[currentIdx], array[smallestIdx] = array[smallestIdx], array[currentIdx]
-    return array
+  #You also must reset smallestIdx within the first while loop. 
+  
+def selectionSort(array):
+  for currentIdx in range(0, len(array) -1):
+    smallestIdx = currentIdx # must reset smallestIdx
+    for i in range(currentIdx, len(array)):
+      if array[i] < array[smallestIdx]:
+        smallestIdx = i
+    array[currentIdx], array[smallestIdx] = array[smallestIdx], array[currentIdx]
+  return array
 
 # Test Cases
 print(selectionSort([]) == [])
 print(selectionSort([1]) == [1])
 print(selectionSort([3, 1, 2, 4])  == [1, 2, 3, 4])
 print(selectionSort([-10, 1, 3, 8, -13, 32, 9, 5]) == [-13, -10, 1, 3, 5, 8, 9, 32])
+print(selectionSort([4,5,4,5,4,54]) == [4, 4, 4, 5, 5, 54])
