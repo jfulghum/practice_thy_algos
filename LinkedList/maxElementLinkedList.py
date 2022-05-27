@@ -5,12 +5,18 @@ class ListNode:
         self.value = value
         self.next = next
         
-def findMax(node: ListNode, max=0) -> int:
-    if node is None:
-      return max
-    if node.value > max:
-      max = node.value
-    return findMax(node.next, max)
+# def findMax(node: ListNode, max=0) -> int:
+#     if node is None:
+#       return max
+#     if node.value > max:
+#       max = node.value
+#     return findMax(node.next, max)
+        
+def findMax(node: ListNode) -> int:
+    if node.next is None:
+      return node.value
+
+    return max(node.value, findMax(node.next))
 
 # Test Cases
 LL1 = ListNode(1, ListNode(4, ListNode(5, ListNode(1))))
