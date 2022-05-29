@@ -23,9 +23,11 @@ class Solution:
             
             if left is None and right is None:
                 return None 
-            if left:
-                return left
-            if right:
-                return right
+            
+            return left or right
+#             if left:
+#                 return left
+#             if right:
+#                 return right
         
         return helper(root, p, q)
