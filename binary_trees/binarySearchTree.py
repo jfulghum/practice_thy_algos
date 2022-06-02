@@ -48,6 +48,20 @@ return arr[0] and arr[1] ? arr : None
 
 '''
 
+while(cur){
+    if cur.value == target:
+    return [target, target]
+
+    if target < cur.value:
+        arr[1] = Math.min(arr[1], node.val)
+        cur = cur.left
+    else:
+        arr[0] = Math.max(arr[0], node.val)
+        cur = cur.right
+    }
+
+# the below way is higher space complexity, the above way has better space complexity. 
+
 import math
 
 class TreeNode:
