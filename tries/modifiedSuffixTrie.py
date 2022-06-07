@@ -26,5 +26,10 @@ class ModifiedSuffixTrie:
                 return False
             node = node[letter]
         return True
-                
+    
+bigString = "this is a big string"
+smallStrings =  ["this", "yo", "is", "a", "bigger", "string", "kappa"]
+
+print(multiStringSearch(bigString, smallStrings))
+# [true, false, true, true, false, true, false]
 
