@@ -59,13 +59,18 @@ class Solution:
       
       
       
-# Input: s = "4(2(3)(1))(6(5))"
+s = "4(2(3)(1))(6(5))"
+print(Solution().str2tree(s))
 # Output: [4,2,6,3,1,5]
+
+
 # Example 2:
 
-# Input: s = "4(2(3)(1))(6(5)(7))"
+s = "4(2(3)(1))(6(5)(7))"
+print(Solution().str2tree(s))
 # Output: [4,2,6,3,1,5,7]
 # Example 3:
 
-# Input: s = "-4(2(3)(1))(6(5)(7))"
+s = "-4(2(3)(1))(6(5)(7))"
+print(Solution().str2tree(s))
 # Output: [-4,2,6,3,1,5,7]
