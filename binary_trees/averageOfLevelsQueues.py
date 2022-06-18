@@ -82,5 +82,5 @@ def averageOfLevelsQueues(root):
 
 print("queue:")
 print(arrayifyTree(tree))
-print(averageOfLevelsQueues(tree)) # [1.0, 2.5, 5.0, 7.0]
+print(averageOfLevelsQueues(tree)) # [1.0, 2.5, 5.0, 8.0]
 
