@@ -41,3 +41,18 @@ class Solution:
             
         return window_size - maxOnesInWindow
             
+        
+#  even cleaner:
+
+class Solution:
+    def minSwaps(self, data: List[int]) -> int:
+        ones = sum(data)
+        onesCount = maxOnes = 0
+        windowStart = 0
+        for windowEnd in range(len(data)):
+            onesCount += data[windowEnd]
+            if windowEnd - windowStart + 1 > ones:
+                onesCount -= data[windowStart]
+                windowStart += 1
+            maxOnes = max(maxOnes, onesCount)
+        return ones - maxOnes
