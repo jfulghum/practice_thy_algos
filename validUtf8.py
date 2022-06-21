@@ -51,3 +51,6 @@ class Solution:
         # This is for the case where we might not have the complete data for
         # a particular UTF-8 character.
         return n_bytes == 0  
+    
+print(validUtf8([197,130,1])) # True
+print(validUtf8([235,140,4])) # False
