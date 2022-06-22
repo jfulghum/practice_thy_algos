@@ -6,6 +6,7 @@
 #         self.right = None
 
 #lowest like the lowest LEVEL (it's not referring to the node's value)
+#Note: a node can be an Ancestor of itself - or at least ask that as a clarification
 
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
