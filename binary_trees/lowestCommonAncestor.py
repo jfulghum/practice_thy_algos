@@ -53,7 +53,7 @@ class Solution:
 # 6. null 
   
     
-def lowestCommonAncestor(self, root, p, q):
+def lowestCommonAncestor(root, p, q):
         # base case
         if not root: return None
         if root is p or root is q: return root
@@ -69,3 +69,19 @@ def lowestCommonAncestor(self, root, p, q):
         if left: return left
         if right: return right
         return None
+
+    
+    
+    
+ def lowestCommonAncestor(root, p, q):   
+        if not root: return None
+        if root == p or root == q: return root
+        
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+        
+        if left and right:
+            return root
+
+        return left or right
+    
