@@ -43,3 +43,25 @@ class Solution:
 #                 return right
         
         return helper(root, p, q)
+    
+    
+    
+    
+    
+    
+def lowestCommonAncestor(self, root, p, q):
+        # base case
+        if not root: return None
+        if root is p or root is q: return root
+
+        # we need info from left and right subtrees
+        left = self.lowestCommonAncestor(root.left, p, q)
+        right = self.lowestCommonAncestor(root.right, p, q)
+
+        # CASE 1: if p in left, q in right or vice versa
+        if left and right:
+            return root
+        # CASE 2 if p/q/LCA exists in left, but not in right, return left. vice versa
+        if left: return left
+        if right: return right
+        return None
