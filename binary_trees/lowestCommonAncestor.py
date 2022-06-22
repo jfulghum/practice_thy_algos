@@ -45,9 +45,13 @@ class Solution:
         return helper(root, p, q)
     
     
-    
-    
-    
+# 1. p is in left subtree, q is in right subtree =>
+# 2. p and q are in left subtree => NO, can go lower
+# 3. p and q are in right subtree => NO, can go lower
+# 4. p and q are in neither subtree => NO
+# 5. is p or q =>MAYBE
+# 6. null 
+  
     
 def lowestCommonAncestor(self, root, p, q):
         # base case
