@@ -5,6 +5,8 @@
 #         self.left = None
 #         self.right = None
 
+#lowest like the lowest LEVEL (it's not referring to the node's value)
+
 class Solution:
     def lowestCommonAncestor(self, root: 'TreeNode', p: 'TreeNode', q: 'TreeNode') -> 'TreeNode':
         
