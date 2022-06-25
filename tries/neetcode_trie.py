@@ -1,5 +1,6 @@
 # https://leetcode.com/problems/implement-trie-prefix-tree/submissions/
 # https://neetcode.io/
+# https://www.youtube.com/watch?v=oobqoCJlHA0
 
 class TrieNode:
     def __init__(self):
