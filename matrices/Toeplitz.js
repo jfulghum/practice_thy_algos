@@ -29,6 +29,8 @@ This is not a Toeplitz matrix:
 1
 */
 
+// Lesson is don't overcomplicate
+
 function isToeplitz(mat) {
   if (mat.length !== mat[0].length) return false
   
