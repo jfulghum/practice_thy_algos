@@ -17,14 +17,15 @@ set(0, 0)
 get(0) => 0
 
 
-Time complexity 
-Is O(n) n being size of array 
+Time complexity has to be per function (not for the whole class)
+Time complexity for initilizing 
+convert_list_to_map method: O(n) n being size of array 
 
 Set method is O(1)
-Get method is O(N)
+Get method is O(1)
 
 Space Complexity of the Class:
-
+O(K) where K is all non-zero elements.
 
 '''
 
