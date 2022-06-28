@@ -10,6 +10,15 @@
 # Output: [[1,2],[3,10],[12,16]]
 # Explanation: Because the new interval [4,8] overlaps with [3,5],[6,7],[8,10].
 
+#Pitfalls:
+#You must ask and make sure it is sorted.
+# Come up with test cases (as few as possible that covered everything, don't waste your interview time):
+
+# [1, 5],[3, 6] => [1, 6]
+# [1, 5], [2, 3]
+# [1, 5], [5, 6]
+# [6, 7], [1, 4], [2, 3], [4, 5]
+
 class Solution:
     def insert(self, intervals: 'List[Interval]', newInterval: 'Interval') -> 'List[Interval]':
         # init data
