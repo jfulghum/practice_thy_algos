@@ -42,6 +42,7 @@ j = 1
 
 
 '''
+# O(n) * square root of N 
 
 def matrixMultiply(a: list[list[int]], b: list[list[int]]):
     result = [[0] * len(a)  for i in range(len(a))]
