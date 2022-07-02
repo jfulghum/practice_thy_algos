@@ -21,6 +21,7 @@ def findLeastFrequentNodeValue(root):
     stack = [root]
     while stack:
         node = stack.pop()
+#         values_count[node.value] = values_count.get(node.value + 1, 1)
         if values_count.get(node.value):
             values_count[node.value] += 1
         else:
