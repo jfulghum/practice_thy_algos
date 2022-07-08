@@ -14,6 +14,9 @@ Can assume nodes have a .value, .left, and a .right field
 Clarifying Questions:
 - If 2 are equally far away return either one
 
+if it's a queue, BFS, just add everything to the queue, return the one at the end b/c that's the deepest one! 
+ it's 4 lines of code! :D
+
 
 Approach:
 
@@ -22,7 +25,7 @@ Approach:
 - keep track of node of that max height
 
 Pseudo code:
-1. create stack, intialize variables (max height and the deepestNode).
+1. intialize variables (max height and the deepestNode).
 2. helper function takes current node
 3. return deepestNode
 */
