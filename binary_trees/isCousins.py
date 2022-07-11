@@ -37,3 +37,5 @@ class Solution:
                 
             if cousins:
                 return False
+            
+        return False
