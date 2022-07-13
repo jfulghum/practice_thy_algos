@@ -1,3 +1,9 @@
+class TreeNode:
+    def __init__(self, val=0, left=None, right=None):
+        self.val = val
+        self.left = left
+        self.right = right
+
 def findDirectReport(root, a, b):
   if root is None:
     return root
@@ -22,11 +28,11 @@ def findDirectReport(root, a, b):
 tree = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5, TreeNode(9) )), TreeNode(3, TreeNode(6, TreeNode(7))))
 #       1
 #     /  \
-#   2      3    #2.5
+#   2      3   
 # /  \    /
-# 4   5  6      # 5.0
+# 4   5  6   
   #  /  /
-  # 9  7       #8.0
+  # 9  7    
 
 
 
