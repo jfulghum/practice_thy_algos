@@ -1,7 +1,7 @@
 # https://leetcode.com/problems/rotate-image/submissions/
 
 # Transposing a matrix and then relecting it ( A reflection is the flipping of a point or figure over a line of reflection (the mirror line))
-# results in a matrix.
+# results in a rotated matrix.
 
 
 class Solution:
