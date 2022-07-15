@@ -15,7 +15,6 @@ class Solution:
         
         while next_level:
             curr_level = next_level
-            test = [x.val for x in curr_level]
             next_level = deque()
             
             for node in curr_level:
