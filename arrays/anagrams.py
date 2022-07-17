@@ -2,6 +2,7 @@
 from collections import defaultdict
 
 def groupAnagrams(words):
+    # Write your code here.
     sorted_words = defaultdict(list)
     for i, word in enumerate(words):
         sorted_word = "".join(sorted(list(word)))
@@ -11,7 +12,6 @@ def groupAnagrams(words):
             sorted_words[sorted_word].append(i)
     result = []  
     tempwords = []
-  
     for key, index in sorted_words.items():
         for i in index:
           tempwords.append(words[i])
@@ -19,6 +19,9 @@ def groupAnagrams(words):
         result.append(tempwords)
         tempwords = []
     return result
+
+words  = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+print(groupAnagrams(words))
 
 # better solution
 def groupAnagrams(words):
@@ -31,3 +34,5 @@ def groupAnagrams(words):
             anagrams[sortedWord] = [word]
 
     return list(anagrams.values())
+words  = ["yo", "act", "flop", "tac", "foo", "cat", "oy", "olfp"]
+print(groupAnagrams(words))
