@@ -85,9 +85,6 @@ dailyBounds1 = ["9:00", "20:00"]
 dailyBounds2  = ["10:00", "18:30"]
 meetingDuration = 30
 
-
-
-
 print(calendarMatching(calendar1, dailyBounds1, calendar2, dailyBounds2, meetingDuration))
 
 # [['11:30', '12:00'], ['15:00', '16:00'], ['18:00', '18:30']]
