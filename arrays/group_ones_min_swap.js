@@ -56,4 +56,15 @@ function minSwaps(array){
 
 
 
-const arr1 = [1,]
+const arr1 = [1, 1, 1, 1, 1, 0, 0, 1, 0]  // 2
+const arr2 = [0,1,0,0,0] // 1
+const arr3 = [0, 1] // 0
+const arr4 = [0, 1, 0] // 1
+const arr5 = [1, 0, 1, 1, 0] // 2
+
+
+console.log(minSwaps(arr1), 2);
+console.log(minSwaps(arr2), 1);
+console.log(minSwaps(arr3), 0);
+console.log(minSwaps(arr4), 1);
+console.log(minSwaps(arr5), 2);
