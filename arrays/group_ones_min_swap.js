@@ -39,11 +39,21 @@ function minSwaps(array){
 
         slowPointer++;
       }
-
-
   }
 
+  slowPointer = 0;
+
+  for (let i = 0; i < array.length; i++) {
+    if (array[i] === 0) {
+      swapCount2 += i - slowPointer;
+
+      slowPointer++;
+    }
+
+  }
+  return Math.min(swapCount1, swapCount2);
 }
 
 
 
+const arr1 = [1,]
