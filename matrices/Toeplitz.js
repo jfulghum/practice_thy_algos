@@ -75,3 +75,33 @@ console.log(isToeplitz([[1,2],
             
 console.log(isToeplitz([[1,4],
                         [3,8]]), false)
+
+
+
+
+function isToeplitz(matrix) {
+  
+  for (let i = 0; i < matrix.length; i++) {
+    let iAlt = matrix.length - 1 - i;
+
+    for(let j = 0; j < matrix.length; j++) {
+      let jAlt = matrix.length - 1 - j;
+
+      if (matrix[i][j] !== matrix[jAlt][iAlt]) {
+        return false;    
+      }
+
+      if(jAlt === j) {
+        break   
+      }   
+  
+    }
+  }
+  return true;
+}
+
+
+let test1 = [[1, 2, 3, 4],[5, 1, 2, 3],[6, 5, 1, 2],[7, 6, 5, 1]];
+let test2 = [[1,2],[2,2]];
+console.log(isToeplitz(test1));
+console.log(isToeplitz(test2))
