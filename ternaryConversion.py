@@ -110,6 +110,7 @@ def convertToBase3(n: int):
         
     result = ''
     while n > 0:
+        print(f"iteration: {i}")
         remainder = n % 2 
         result = str(remainder) + result 
 
@@ -129,3 +130,6 @@ print( convertToBase3(3)) # "10"
 print( convertToBase3(4))  # "11"
 print(convertToBase3(92)) # 10102
 print(convertToBase3(-5)) # -12
+
+print(convertToBase3(21512)) # 10102
+print(math.log(21512))
