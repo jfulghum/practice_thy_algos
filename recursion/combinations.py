@@ -24,3 +24,42 @@ print(solution(nums))
 
 # for every additional number, you double the output. 
 # So time complexity is  2 O(n) 
+
+
+
+# Example 1
+
+# getAllSubsequences("abc") == [
+#   "a",
+#   "b",
+#   "c",
+#   "ab",
+#   "ac",
+#   "bc",
+#   "abc",
+# ]
+
+# THEN getAllSubsequences("abcd") == [
+# You have all the letters you have before, and now you have to add another letter to EVERYthing you already had.
+
+# Example 2:
+
+
+
+#   "a",
+#   "b",
+#   "c",
+#   "d",
+#   "e",
+#   "ab",
+#   "ac",
+#   "bc",
+#   "abc",
+
+#   "ad",
+#   "bd",
+#   "cd",
+#   "abd",
+#   "acd",
+#   "bcd",
+#   "abcd",
