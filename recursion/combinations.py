@@ -19,3 +19,8 @@ nums= [1, 2, 3]
 #  [1,2,3]]
 
 print(solution(nums))
+
+
+
+# for every additional number, you double the output. 
+# So time complexity is  2 O(n) 
