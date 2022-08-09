@@ -23,7 +23,8 @@ print(solution(nums))
 
 
 # for every additional number, you double the output. 
-# So time complexity is  2 O(n) 
+# Space complexity is  2 O(n) 
+# Time complexity is 2 O(n)
 
 
 
