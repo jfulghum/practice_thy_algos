@@ -64,3 +64,24 @@ print(solution(nums))
 #   "acd",
 #   "bcd",
 #   "abcd",
+
+
+
+def helper(current, remaining, result):
+    running_list = []
+    for i in range(len(remaining)):
+        new_current = current + remaining[i]
+        helper(new_current, remaining[i+1:], result)
+        result.append(new_current)
+
+def getAllSubsequences(string):
+    result = []
+
+    helper("", list(string), result)
+    
+    return result
+
+print(getAllSubsequences("abc"))
+print(getAllSubsequences("abcd"))
+print(getAllSubsequences(""))
+print(getAllSubsequences("abcdef"))
