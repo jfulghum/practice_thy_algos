@@ -85,3 +85,24 @@ print(getAllSubsequences("abc"))
 print(getAllSubsequences("abcd"))
 print(getAllSubsequences(""))
 print(getAllSubsequences("abcdef"))
+
+
+
+# how to change so it's permutations?
+def helper(current, remaining, result):
+    if len(remaining) == 0:
+        result.append(current)
+    
+    for i in range(len(remaining)):
+        new_current = current + remaining[i]
+        new_remaining = remaining.copy()
+        new_remaining.pop(i)
+        helper(new_current, new_remaining, result)
+
+def getAllSubsequences(string):
+    result = []
+
+    helper("", list(string), result)
+    
+    return result
+
