@@ -89,7 +89,7 @@ print(getAllSubsequences("abcdef"))
 
 
 
-# all possible -> think it's RECURSION
+# 'all possible' -> think: it's RECURSION
 # it's always remove one element, and then recurse on the the remaining.
 
 # think of interating thru all the substrings and recursing on the remaining. 
