@@ -88,6 +88,11 @@ print(getAllSubsequences("abcdef"))
 
 
 
+
+# all possible -> think it's a big return size. 
+# think of interating thru all the subsstrings and recursing on the rest. It's that structure for all these problems.
+
+
 # how to change so it's permutations?
 def helper(current, remaining, result):
     if len(remaining) == 0:
