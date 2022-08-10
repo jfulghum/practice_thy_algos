@@ -89,8 +89,11 @@ print(getAllSubsequences("abcdef"))
 
 
 
-# all possible -> think it's a big return size. 
-# think of interating thru all the subsstrings and recursing on the rest. It's that structure for all these problems.
+# all possible -> think it's RECURSION
+# it's always remove one element, and then recurse on the the remaining.
+
+# think of interating thru all the substrings and recursing on the remaining. 
+# (It's that structure for 'all possible' problems.)
 
 
 # how to change so it's permutations?
