@@ -14,3 +14,16 @@ def tower_of_hanoi(n, a="1", b="2", c="3"):
         
 # This will run in O(2n) time, since for each call we're recursively calling ourselves twice. 
 # This should also take O(n) space since the function call stack goes n calls deep.
+
+
+# tower(disk, source, inter, dest)
+
+# IF disk is equal 1, THEN
+#       move disk from source to destination
+#    ELSE
+#       tower(disk - 1, source, destination, intermediate)   // Step 1
+#       move disk from source to destination                 // Step 2
+#       tower(disk - 1, intermediate, source, destination)   // Step 3
+#    END IF
+   
+# END
