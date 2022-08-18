@@ -97,6 +97,8 @@ print(getAllSubsequences("abcdef"))
 
 
 # how to change so it's permutations?
+# https://leetcode.com/problems/permutations/submissions/
+
 def helper(current, remaining, result):
     if len(remaining) == 0:
         result.append(current)
