@@ -1,3 +1,25 @@
+def combos(students):
+  tempSet = set()
+
+  def backtrack(combo, charSet):
+    if (len(combo) == len(students)):
+      print(combo)
+      return
+
+    for char in students:
+      if (char not in charSet):
+
+        combo.append(char)
+        charSet.add(char)
+        backtrack(combo, charSet)
+        combo.pop()
+        charSet.remove(char)
+
+  backtrack([], tempSet)
+
+
+
+
 def solution(a):
     if len(a) == 0:
         return [[]]
