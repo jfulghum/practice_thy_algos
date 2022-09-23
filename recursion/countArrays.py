@@ -79,6 +79,12 @@ for each  [1, 2, [3]]
     element = [3]
     ---> sumTotal += 1
 return sumTotal (2)
+
+
+# when we return from the stack frame, we destroy it. we destroy that stack frame, and only have what was returned back.
+that's why in python you can't have memory leaks, b/c it throws it away for you.
+
+#charles 
 """
 def countArrays(array: list) -> int:
     sumTotal = 1 # always count itself
