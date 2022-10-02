@@ -66,3 +66,41 @@
 # [1, 2, 1, 4] -> true (false summit)
 # */
 
+
+
+# [1,4,5,9,8] -> false (true summit - Anthony)
+#        ^
+#  1/1 = 1
+#   4 / 2 = 2
+#   5 / 3 = less than 2
+
+#   highestSlope = 2
+# highestMountain = 5
+# highestMountainSlope = 1.6671.66
+
+# return highestSlope != highestMountainSlope
+# agree - xxxxxxxxxx
+# disagree - xxxxx
+
+# [1, 1, 1, 1, 1, 10]
+
+
+mountains = [1,2,1,4]
+
+def is_false_summit(mountains):
+    highest_slope = 0
+    highest_mountain_slope = 0
+    highest_mountain = 0
+    
+    for index, mountain in enumerate(mountains, start=1):
+        slope = mountain / index
+        highest_slope = max(slope, highest_slope)                
+
+        if mountain > highest_mountain:
+            highest_mountain = mountain
+            highest_mountain_slope = slope
+
+    return highest_slope != highest_mountain_slope
+
+
+print(is_false_summit(mountains))
