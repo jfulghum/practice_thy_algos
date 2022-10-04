@@ -1,7 +1,15 @@
 from collections import queue
 visited = set()
 
-def possible_vacations(flights):
+flights = {"Seattle": "Boston", "Austin",
+        "Austin": "New York"} 
+start = "Seattle"
+end = "New York"
+output = 2 
+
+
+def find_shortest_path(flights, start, end):
+  
   visited = set()
   queue = deque()
 
