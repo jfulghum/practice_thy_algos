@@ -96,3 +96,8 @@ const sumLinkedLists = (head1, head2) => {
 }
 
 console.log(sumLinkedLists(ll1, ll2)) // list with 7, 0, 4
+
+
+
+
+// #vinit - "I know in elementary school, I was taught, I add two big numbers from left to right, from the zeroes place. 
