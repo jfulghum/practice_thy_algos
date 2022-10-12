@@ -133,3 +133,40 @@ print(convertToBase3(-5)) # -12
 
 print(convertToBase3(21512)) # 10102
 print(math.log(21512))
+
+
+def convertToBase3(n: int) -> str:
+    '''
+    r = '-'
+    n = 5
+    rem = 1 % 3 = 1
+    '''
+    if n == 0:
+        return '0'
+
+    if n < 0:
+        n = abs(n)
+        sign = '-'
+    else:
+        sign = ''
+
+    ternary_number = ''
+
+    while n:
+        remainder = n % 3
+        ternary_number += str(remainder)
+        n = n // 3
+
+    return sign + ternary_number[::-1]
+
+# Target runtime and space complexity:
+# Time: O(log3 n) to parse each digit in the number n
+# Space: O(n) to create up to n stack frames
+# Examples:
+print(convertToBase3(0) == "0")
+print(convertToBase3(1) == "1")
+print(convertToBase3(2) == "2")
+print(convertToBase3(3) == "10")
+print(convertToBase3(4) == "11")
+print(convertToBase3(5) == "12")
+print(convertToBase3(-5) == "-12")
