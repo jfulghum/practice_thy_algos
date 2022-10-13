@@ -1,4 +1,4 @@
-
+/*
 Backtracking is an algorithmic technique for solving problems recursively by trying to build a solution incrementally, one piece at a time, removing those solutions that fail to satisfy the constraints of the problem at any point in time.
 
 Given three students, who will refer to as “A”, “B”, and “C”, return an array representing all the combinations that they can sit in three seats. For example:
