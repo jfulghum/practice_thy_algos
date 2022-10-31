@@ -1,4 +1,4 @@
-lass Solution:
+class Solution:
     def generateParenthesis(self, n: int) -> List[str]:
         ans = []
         def backtrack(s = [], left = 0, right = 0):
