@@ -1,4 +1,13 @@
 /*
+
+takeways:
+     you first need to find the root, otherwise you won't hit every part of the tree as you traverse the adjacency list
+     you simply need to traverse the tree, could be a stack or a queue, doesn't matter.
+     the time complexity of a graph is almost always O(V + E) (vertices plus edges) -> not O(N) b/c it could be a tree with a ton of nodes)
+
+#Temiloluwa
+
+
 Given an adjacency list of a directed graph, return "BINARY TREE" if it's a binary tree, "TREE" if it's any other type of tree, or "NONE" if it's neither.
 Examples
      1
