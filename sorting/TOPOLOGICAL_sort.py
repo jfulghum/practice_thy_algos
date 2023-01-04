@@ -37,7 +37,14 @@ edge_list = [
      Put in oven   Clean kitchen
 
 
-easy way to do this is with adjacecy list
+easy way to do this is with adjacecy list, example here:
+
+graph = {'A': set(['B', 'C']),
+         'B': set(['A', 'D', 'E']),
+         'C': set(['A', 'F']),
+         'D': set(['B']),
+         'E': set(['B', 'F']),
+         'F': set(['C', 'E'])}
      
      
 ['Prepare kitchen', 'Mix flour', 'Mix wet ingredients', 'Combine', 'Clean kitchen', 'Put in oven']
