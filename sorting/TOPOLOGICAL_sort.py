@@ -45,7 +45,17 @@ graph = {'A': set(['B', 'C']),
          'D': set(['B']),
          'E': set(['B', 'F']),
          'F': set(['C', 'E'])}
-     
+{
+ "Prepare kitchen": [],
+ "Combine": ["Mix flour", "Mix Wet ingredients"],
+ "Mix Flour": ["prepare kitchen"]
+ "Mix Wet ingredients": ["prepare kitchen"],
+ "Put in oven": ["combine"]
+ "clean kitchen": ["combine"]
+}
+
+Graph coloring -> assign a label to all the nodes. Use as few labels as possible and you have to assign the label so that 2 adj don't have the same color. 
+Imagine a map. You don't want states that are next to each other to be the same color. 
      
 ['Prepare kitchen', 'Mix flour', 'Mix wet ingredients', 'Combine', 'Clean kitchen', 'Put in oven']
 OR
