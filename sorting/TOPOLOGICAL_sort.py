@@ -35,5 +35,23 @@ edge_list = [
              Combine
               /     \
      Put in oven   Clean kitchen
+
+
+easy way to do this is with adjacecy list
+     
+     
+['Prepare kitchen', 'Mix flour', 'Mix wet ingredients', 'Combine', 'Clean kitchen', 'Put in oven']
+OR
+['Prepare kitchen', 'Mix wet ingredients', 'Mix flour', 'Combine', 'Clean kitchen', 'Put in oven']
+OR
+['Prepare kitchen', 'Mix wet ingredients', 'Mix flour', 'Combine', 'Put in oven', 'Clean kitchen']
+OR
+['Prepare kitchen', 'Mix flour', 'Mix wet ingredients', 'Combine', 'Put in oven', 'Clean kitchen']
+
+Top down approach:
+- While nodes remain:
+  - Find any nodes with no dependencies
+  - Remove that node from the graph and add to output
+- return the output list
           
 """
