@@ -12,7 +12,9 @@ def inOrderTraversal(root):
     return res
 
 
-# note thesee are ALL DFS (you can tell b/c they are all recursive)
+# note these are ALL DFS (you can tell b/c they are all recursive)
+# note if it's a BST or a valid Binary Search Tree, inOrder will produce a list of lowest to highest values
+
 #recursive
 def inOrderTraverse(tree, array):
     if tree is not None:
