@@ -12,7 +12,7 @@ def inOrderTraversal(root):
     return res
 
 
-
+# note thesee are ALL DFS (you can tell b/c they are all recursive)
 #recursive
 def inOrderTraverse(tree, array):
     if tree is not None:
