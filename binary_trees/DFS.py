@@ -46,3 +46,38 @@ def find_dfs_rec(node, target):
         return True
 
     return find_dfs_rec(node.left, target) or find_dfs_rec(node.right, target)
+
+
+
+
+
+# left, then right. to remember:
+# left check, right cheek, left cheek, right cheek, it must be a crime to be as fine as you
+# booty wurk booty wurk, lemme see that booty wurk
+
+
+
+# If it's a graph instead of a tree (it's the same but even easier b/c you don't need to call left and right separately) :
+
+def dfs(node):
+  # Base Case
+  if not node: return
+  # Preorder operation
+  print(node.val)
+  # Recursive case
+  for next_node in node.neighbors:
+    dfs(next_node)
+    
+    
+    
+# if there is a loop
+def loop_safe_dfs(node, visited):
+  # Base Case
+  if not node: return
+  if node in visited: return # <<<<<
+  # Preorder operation
+  visited.add(node) # <<<<<<
+  print(node.val)
+  # Recursive case
+  for next_node in node.neighbors:
+    dfs(next_node, visited)
