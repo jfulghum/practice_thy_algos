@@ -65,3 +65,45 @@ def traverse_bfs_levels2(graph, current_node):
                 next_q.append(child)
         print()
         queue = next_q
+        
+ # Example 1:
+#                  0   1   2   3
+# Input: rooms = [[1],[2],[3],[]]
+# Output: true
+# Explanation: 
+# We visit room 0 and pick up key 1.
+# We then visit room 1 and pick up key 2.
+# We then visit room 2 and pick up key 3.
+# We then visit room 3.
+# Since we were able to visit every room, we return true.
+
+# Example 2:
+#                   0      1     2   3
+# Input: rooms = [[1,3],[3,0,1],[2],[0]]
+# Output: false
+# Explanation: We can not enter room number 2 since the only key that unlocks it is in that room.
+
+# 1
+#set([0, 1, 2, 3]) == len(rooms)
+
+# Input: rooms = [[3],[2],[1],[]]
+ def traversal(rooms):
+    visited = set([0])
+    room1 = rooms[0]
+    queue = deque([room1])
+    while queue:
+        curr_room = queue.popleft()
+        for key in curr_room:
+            if key not in visited:
+                queue.append(rooms[key])
+            visited.add(key)
+    print('visited', visited)
+    return len(visited) == len(rooms)
+
+rooms = [[1,3],[3,0,1],[2],[0]]
+
+print(traversal(rooms)) # False
+
+rooms2 = [[1],[2],[3],[]]
+
+print(traversal(rooms2)) # True
