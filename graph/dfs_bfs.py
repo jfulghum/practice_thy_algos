@@ -27,3 +27,27 @@ def traverse_bfs(graph, current_node):
             queue.append(child)
 
 traverse_bfs(graph, 'A')
+
+
+def traverse_bfs_levels(graph, current_node):
+    queue = deque([[current_node]])
+    while queue:
+        nodes = queue.popleft()
+        print(' '.join(nodes))
+        nextLevel = []
+        for node in nodes:
+            for child in graph[node]:
+                nextLevel.append(child)
+        if nextLevel: queue.append(nextLevel)
+
+traverse_bfs_levels(graph, 'A')
+
+# A
+# B C
+# D E
+# F
+#   F
+
+#      A
+#    B        C
+# D    E         F
