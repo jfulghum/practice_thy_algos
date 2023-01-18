@@ -8,3 +8,38 @@ What are Actors of the System?
 Write out APIs signatures where the requirements are done by the Actors
 
 Then Draw out your system. Don't just start drawing load balancers and caches without saying why you are going to use them. 
+
+
+Unclear
+
+I guess I should use a queue here, for publisher and subscriber?
+
+---
+
+I’ll partition by the foo_id or the bar_id
+
+---
+
+I could use a cache here.
+
+---
+
+An index will make it faster.
+
+Reasonable
+
+I will use a queue here to help decouple these services and make this component asynchronous from the rest. Whenever request to update a Foo comes in, the FooService publishes a message for the BarService to consume for processing.
+
+---
+
+I could partition by foo_id which would be good for X and Y but not good for Z. I could partition by bar_id which would be good for Y and Z but not good for W. 
+
+Based on our requirements, this critical feature F receives most of the traffic so I’ll partition by the foo_id since it would help speed up that feature the most.
+
+---
+
+I could use a key-value cache that maps foo_id to bar_id so the getBar(foo_id) API can quickly get frequently accessed Bar resources. The cache entry would have to be invalidated when foo_id gets deleted.
+
+---
+
+An index on foo_points would improve read performance on the highest score but incurs more write latency which is acceptable for this read-heavy scenario.
