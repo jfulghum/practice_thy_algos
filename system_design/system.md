@@ -45,7 +45,7 @@ I could use a key-value cache that maps foo_id to bar_id so the getBar(foo_id) A
 An index on foo_points would improve read performance on the highest score but incurs more write latency which is acceptable for this read-heavy scenario.
 
 
-For the logging system that multiple people are going to use
+For the logging system that multiple engineering teams are going to use
 
 SQL
 
