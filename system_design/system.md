@@ -43,3 +43,15 @@ I could use a key-value cache that maps foo_id to bar_id so the getBar(foo_id) A
 ---
 
 An index on foo_points would improve read performance on the highest score but incurs more write latency which is acceptable for this read-heavy scenario.
+
+
+For the logging system that multiple people are going to use
+
+SQL
+
+I could use a relational database to combine information across multiple tables. It doesn’t work well if the products have lots of different traits though because the schema has to be flexible (for example, cookies have calories and grams of sugar while sweaters have size and arm length).
+
+vs. 
+NoSQL
+
+I could use a NoSQL database to handle the schema-less product traits but theres limited joining. This data in multiple tables don’t have to be joined a lot though so this limitation shouldn’t be a problem.
