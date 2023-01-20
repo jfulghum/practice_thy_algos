@@ -55,3 +55,15 @@ vs.
 NoSQL
 
 I could use a NoSQL database to handle the schema-less product traits but theres limited joining. This data in multiple tables don’t have to be joined a lot though so this limitation shouldn’t be a problem.
+
+Reasonable
+
+I will use SQL because the schema is static among all of the records.
+
+I will use SQL because it's a read-heavy system with many relationships.
+
+---
+
+I will use document store because everyone’s dating profiles will have different preferences and interests set and sometimes not at all so I need a flexible schema.
+
+I will use a document store because this is a write-intensive system that doesn’t involve a lot of relationships.
