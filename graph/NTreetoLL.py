@@ -70,7 +70,7 @@ def bfs(root):
         ptr = head
                 
         for node in currentLevel: 
-            ptr.next = LLNode(node)
+            ptr.next = LLNode(node.val)
             ptr=ptr.next
        
         result.append(head.next)    
@@ -84,3 +84,18 @@ def bfs(root):
        | |
        5 6 
 '''
+def printLL(head):
+    while head:
+        print(head.val,end ="->")
+        head = head.next
+    
+    print("None")
+    print("\n")
+
+# children1 = [Node(2)]
+
+tree1 = Node(1,[Node(2,[]) , Node(3,[Node(5,[])]),  Node(4,[Node(6,[])])]  )
+res = bfs(tree1)
+
+for node in res:
+    printLL(node)
