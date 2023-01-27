@@ -1,3 +1,17 @@
+# ❓ PROMPT
+# Given a vertex and edge list of nodes and a start node for an undirected graph 
+# return the sum of all the nodes values accessible from the start node. For practice's sake, do this in DFS order.
+
+# Example(s)
+vertexList = [1, 2, 3, 4, 5]
+edgeList= [(1, 2), (2, 3), (1, 3)]
+
+# 1--2
+# | /
+# 3      4    5
+
+
+
 def toAdjList(vertexList, edgeList):
     output = {}
     for v in vertexList:
@@ -24,3 +38,5 @@ def sumNodes(vertexList: list, edgeList: list, startNode: int) -> int:
             dfs(neighbor)
     dfs(startNode)
     return total
+
+sumNodes(vertexList, edgeList, 1) #-> 6
